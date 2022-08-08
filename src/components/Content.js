@@ -6,6 +6,7 @@ import styles from './Content.module.css'
 import Countdown from './Countdown';
 import Weather from './Weather';
 import Crypto from './Crypto';
+import Todo from './Todo';
 
 const Content = () => {
     return (
@@ -15,7 +16,7 @@ const Content = () => {
             <Crypto/>
             <Alarm/>
             <Calculator/>
-            <div>todo</div>
+            <Todo/>
             <Weather/>
             <div  className={styles.note}>
                 <textarea type={'text'} placeholder='You can write something here'></textarea>

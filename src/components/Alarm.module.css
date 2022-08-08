@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.countdown {
+    position: relative;
+    width: 90%;
+    padding-top: 90%;
+    border-radius: 50%;
+    box-shadow:  6px 6px 20px var(--shadow-x),
+    -6px -6px 20px var(--shadow-y),
+       inset 2px 2px 5px var(--shadow-y),
+       inset -2px -2px 5px var(--shadow-x);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+
+.counterArea {
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+}
+
+.counterCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+#arrow {
+    cursor: pointer;
+}
+
+#arrow:active {
+    opacity: 40%;
+}
+
+.arrowHide {
+    /* display: none; */
+}
+
+.buttonArea {
+    display: flex;
+    bottom: 15%;
+    position: absolute;
+    font-size: 1.5rem;
+}
+
+#button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+#button:active {
+    opacity: 40%;
+}
+
+.buttonHide {
+    /* display: none; */
+}
