@@ -1,0 +1,14 @@
+.container {
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    background-color: var(--color-primary);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.container p {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.clock {
+    position: relative;
+    width: 70%;
+    padding-top: 70%;
+    background-color: var(--color-primarey);
+    border-radius: 50%;
+    box-shadow:  6px 6px 20px var(--shadow-x),
+    -6px -6px 20px var(--shadow-y),
+       inset 2px 2px 5px var(--shadow-y),
+       inset -2px -2px 5px var(--shadow-x);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hourHandle {
+    top: 5%;
+    position: absolute;
+    height: 90%;
+    width: 3px;
+}
+
+.hourHandle::after {
+    content: '';
+    top: 0;
+    position: absolute;
+    background-color: var(--color-accent);
+    height: 5%;
+    width: 3px;
+    border-radius: 1.5px;
+    box-shadow:  3px 3px 6px var(--shadow-x),
+    -3px -3px 6px var(--shadow-y);
+}
+
+.minuteHandle {
+    top: 5%;
+    position: absolute;
+    height: 90%;
+    width: 3px;
+}
+
+.minuteHandle::after {
+    content: '';
+    top: 0;
+    position: absolute;
+    background-color: var(--color-accent);
+    height: 10%;
+    width: 3px;
+    border-radius: 1.5px;
+    box-shadow:  3px 3px 6px var(--shadow-x),
+    -3px -3px 6px var(--shadow-y);
+}
+
+.secondHandle {
+    top: 5%;
+    position: absolute;
+    height: 90%;
+    width: 3px;
+}
+
+.secondHandle::after {
+    content: '';
+    top: 0;
+    position: absolute;
+    background-color: var(--color-accent);
+    height: 50%;
+    width: 3px;
+    border-radius: 1.5px;
+    box-shadow:  3px 3px 6px var(--shadow-x),
+    -3px -3px 6px var(--shadow-y);
+}

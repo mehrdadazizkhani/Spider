@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow:  4px 4px 10px var(--shadow-x),
+    -4px -4px 10px var(--shadow-y),
+       inset 2px 2px 5px var(--shadow-y),
+       inset -2px -2px 5px var(--shadow-x);
+    border-radius: 20px;
+}
+
+.display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 20px;
+    height: 20%;
+    width: calc(100% - 40px);
+    border-radius: 10px;
+    box-shadow:  inset 6px 6px 20px var(--shadow-x),
+    inset -6px -6px 20px var(--shadow-y);
+    font-size: 2rem;
+}
+
+.keypad {
+    height: 70%;
+    width: 100%;
+}
+
+.keypadArea {
+    height: 100%;
+    width: 100%;
+}
+
+.keypadArea td {
+    width: 25%;
+    padding: 5px;
+}
+
+.key {
+    border-radius: 20px;
+    box-shadow:   3px 3px 10px var(--shadow-x),
+     -3px -3px 10px var(--shadow-y),
+     inset -1px -1px 4px var(--shadow-x),
+     inset 1px 1px 4px var(--shadow-y);
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1.5rem;
+}
+
+.key:active {
+    box-shadow: inset  2px 2px 10px var(--shadow-x),
+    inset -2px -2px 10px var(--shadow-y),
+     -1px -1px 4px var(--shadow-x),
+      1px 1px 4px var(--shadow-y);
+      opacity: 80%;
+      border: non;
+}
+
+tr:first-child .key {
+    border: 1px solid var(--color-accent);
+}
+
+td:last-child .key {
+    border: 1px solid var(--color-accent);
+}
+
+tr:first-child .key:active {
+    border: 1px solid var(--color-secondary);
+}
+
+td:last-child .key:active {
+    border: 1px solid var(--color-secondary);
+}

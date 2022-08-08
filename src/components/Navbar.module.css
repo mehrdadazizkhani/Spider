@@ -1,0 +1,185 @@
+.container {
+    z-index: 50;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: var(--color-primary);
+}
+
+.titleSec {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    font-size: 4rem;
+}
+
+.container h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.navBarSec {
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    box-shadow: inset 3px 3px 6px var(--shadow-x),
+     inset -3px -3px 6px var(--shadow-y);
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 25px;
+    background-color: var(--color-primary);
+    border-radius: 100px;
+    padding: 5px;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+}
+
+.toggleCircle {
+    box-shadow:  3px 3px 6px var(--shadow-x),
+     -3px -3px 6px var(--shadow-y);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transition: transform 0.3s ease-in;
+}
+
+.toggleCircleActive {
+    transform: translateX(200%);
+}
+
+.colorPicker {
+    box-shadow:  3px 3px 6px var(--shadow-x),
+                 -3px -3px 6px var(--shadow-y);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    margin-right: 20px;
+}
+
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.navBar {
+    background-color: var(--color-secondary);
+    padding: 0;
+    margin: 0;
+    width: 50vw;
+    height: 100vh;
+    top: 80px;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    transition: transform 0.3s ease-in;
+}
+
+.navClose {
+    transform: translateX(100%);
+}
+
+.navBar li {
+    list-style-type: none;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--color-primary);
+}
+
+.hamburgerMenu {
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(30px * 1.33);
+    height: 30px;
+}
+
+.lines {
+    transform-origin: calc(30px * 1.33);
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: all 0.3s ease-in;
+}
+
+.hamClose .lines:nth-of-type(1) {
+    transform: rotate(-45deg);
+}
+
+.hamClose .lines:nth-of-type(2) {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.hamClose .lines:nth-of-type(3) {
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 800px) {
+    .navBar {
+        background-color: var(--color-peimary);
+        top: auto;
+        right: auto;
+        position: relative;
+        width: fit-content;
+        flex-direction: row;
+        padding: 0;
+        height: auto;
+    }
+    
+    .navBar li {
+        color: var(--color-secondary);
+        margin-right: 20px;
+    }
+
+    .activeNav {
+        box-shadow: inset 3px 3px 6px var(--shadow-x),
+        inset -3px -3px 6px var(--shadow-y);
+    }
+
+    .hamburgerMenu {
+        display: none;
+    }
+}

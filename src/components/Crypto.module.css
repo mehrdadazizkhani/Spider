@@ -1,0 +1,6 @@
+.container {
+    box-shadow:  4px 4px 10px var(--shadow-x),
+    -4px -4px 10px var(--shadow-y),
+       inset 2px 2px 5px var(--shadow-y),
+       inset -2px -2px 5px var(--shadow-x);
+}
