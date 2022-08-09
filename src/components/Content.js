@@ -7,21 +7,22 @@ import Countdown from './Countdown';
 import Weather from './Weather';
 import Crypto from './Crypto';
 import Todo from './Todo';
+import Note from './Note.js'
 
 const Content = () => {
     return (
         <div className={styles.container}>
-            <Clock/>
-            <div>world clock</div>
-            <Crypto/>
-            <Alarm/>
-            <Calculator/>
-            <Todo/>
-            <Weather/>
-            <div  className={styles.note}>
-                <textarea type={'text'} placeholder='You can write something here'></textarea>
+            <div className={styles.content}>    
+                <Clock/>
+                <div>world clock</div>
+                <Crypto/>
+                <Alarm/>
+                <Calculator/>
+                <Todo/>
+                <Weather/>
+                <Note/>
+                <Countdown/>
             </div>
-            <Countdown/>
         </div>
     );
 };

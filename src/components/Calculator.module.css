@@ -45,10 +45,10 @@
      -3px -3px 10px var(--shadow-y),
      inset -1px -1px 4px var(--shadow-x),
      inset 1px 1px 4px var(--shadow-y);
-     height: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
      font-size: 1.5rem;
 }
 

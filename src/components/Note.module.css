@@ -1,0 +1,44 @@
+.note {
+    box-shadow:  4px 4px 10px var(--shadow-x),
+    -4px -4px 10px var(--shadow-y),
+       inset 2px 2px 5px var(--shadow-y),
+       inset -2px -2px 5px var(--shadow-x);
+     padding: 10px;
+     border-radius: 20px;
+
+}
+
+.note textarea {
+    box-shadow:  inset 6px 6px 20px var(--shadow-x),
+    inset -6px -6px 20px var(--shadow-y);
+    background-color: var(--color-primary);
+    border: none;
+    padding: 30px;
+    border-radius: 10px;
+    width: calc(100% - 60px);
+    height: calc(85% - 60px);
+    color: var(--color-secondary);
+    resize: none;
+    font-size: 1.5rem;
+}
+
+.note textarea:focus {
+    outline: none;
+}
+
+.note textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.info {
+    padding: 0 20px;
+    font-size: 1.5rem;
+}
+
+.info > span {
+    color: var(--color-accent);
+}
+
+.deactiveContent {
+    display: none;
+}

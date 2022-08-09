@@ -1,84 +1,61 @@
 .container {
+    height: 100%;
     background-color: var(--color-primary);
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transform: translateY(80px);
+}
+
+.content {
+    height: calc(100vh - 200px);
+    padding: 20px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    height: calc(100vh - 200px);
-    grid-template-areas: 'clock clock wclock wclock weather todo todo crypto'
-                         'clock clock wclock wclock weather todo todo crypto'
-                         'calc calc note note alarm todo todo crypto'
-                         'calc calc note note count todo todo crypto';
+    grid-template-areas: 'clock clock wclock wclock alarm todo todo crypto'
+                         'clock clock wclock wclock count todo todo crypto'
+                         'calc calc note note weather todo todo crypto'
+                         'calc calc note note weather todo todo crypto';
+    aspect-ratio: 5/2.5;
 }
 
 
 
-.container > :nth-child(1) {
+.content > :nth-child(1) {
     grid-area: clock;
 }
 
-.container > :nth-child(2) {
+.content > :nth-child(2) {
     grid-area: wclock;
 }
 
-.container > :nth-child(3) {
+.content > :nth-child(3) {
     grid-area: crypto;
 }
 
-.container > :nth-child(4) {
+.content > :nth-child(4) {
     grid-area: alarm;
 }
 
-.container > :nth-child(5) {
+.content > :nth-child(5) {
     grid-area: calc;
 }
 
-.container > :nth-child(6) {
+.content > :nth-child(6) {
     grid-area: todo;
 }
 
-.container > :nth-child(7) {
+.content > :nth-child(7) {
     grid-area: weather;
 }
 
-.container > :nth-child(8) {
+.content > :nth-child(8) {
     grid-area: note;
 }
 
-.container > :nth-child(9) {
+.content > :nth-child(9) {
     grid-area: count;
 }
 
-.note {
-    box-shadow:  4px 4px 10px var(--shadow-x),
-    -4px -4px 10px var(--shadow-y),
-       inset 2px 2px 5px var(--shadow-y),
-       inset -2px -2px 5px var(--shadow-x);
-     padding: 10px;
-     border-radius: 20px;
-
-}
-
-.note textarea {
-    box-shadow:  inset 6px 6px 20px var(--shadow-x),
-    inset -6px -6px 20px var(--shadow-y);
-    background-color: var(--color-primary);
-    border: none;
-    padding: 30px;
-    border-radius: 10px;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
-    color: var(--color-secondary);
-    resize: none;
-    font-size: 1.5rem;
-}
-
-.note textarea:focus {
-    outline: none;
-}
-
-.note textarea::-webkit-scrollbar {
-    display: none;
-}
