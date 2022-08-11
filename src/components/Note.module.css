@@ -30,12 +30,24 @@
     display: none;
 }
 
-.info {
+.infoGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
     font-size: 1.5rem;
 }
 
-.info > span {
+.infoGroup > p > span {
+    color: var(--color-accent);
+}
+
+.infoGroup > a {
+    cursor: pointer;
+    color: var(--color-secondary);
+}
+
+.infoGroup > a:active {
     color: var(--color-accent);
 }
 

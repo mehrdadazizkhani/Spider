@@ -25,7 +25,10 @@ const Note = () => {
     return (
         <div className={styles.note}>
             <textarea type={'text'} onChange={contentHandler} value={content} placeholder='You can write something here'></textarea>
-            <p className={`${styles.info} ${content ? '' : styles.deactiveContent}`}>Number of words: <span>{wordCounter()}</span></p>
+            <div className={`${styles.infoGroup} ${content ? '' : styles.deactiveContent}`}>
+                 <p>Number of words: <span>{wordCounter()}</span></p>
+                 <a href={URL.createObjectURL(new Blob([content], {type: 'text/plain'}))} download="filename"><i className="fa-solid fa-file-arrow-down"></i></a>
+            </div>
         </div>
     );
 };
