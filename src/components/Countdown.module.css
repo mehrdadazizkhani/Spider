@@ -68,5 +68,35 @@
 }
 
 .buttonHide {
-    /* display: none; */
+    display: none;
 }
+
+.buttonDeactive {
+    opacity: 30%;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.lines {
+    content: '';
+    width: 2px;
+    transform-origin: 50%;
+    height: 90%;
+}
+
+.lines::after {
+    content: '.';
+    width: 2px;
+    height: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-accent);
+}
+

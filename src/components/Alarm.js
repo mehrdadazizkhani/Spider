@@ -24,8 +24,8 @@ const Countdown = () => {
                         </div>
                     </div>
                     <div className={styles.buttonArea}>
-                        <div className={styles.buttonHide}><i id={styles['button']} class="fa-solid fa-bell"></i></div>
-                        <div className={styles.buttonHide}><i id={styles['button']} class="fa-solid fa-bell-slash"></i></div>
+                        <div className={styles.buttonHide}><i id={styles['button']} className="fa-solid fa-bell"></i></div>
+                        <div className={styles.buttonHide}><i id={styles['button']} className="fa-solid fa-bell-slash"></i></div>
                     </div>
             </div>
         </div>
