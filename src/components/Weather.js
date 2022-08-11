@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 const Weather = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState(false)
     const [content, setContent] = useState('')
     const [city, setCity] = useState('tehran')
     const [cityName, setCityName] = useState()
@@ -27,7 +27,7 @@ const Weather = () => {
             setTemp(prevTemp => prevTemp = response.data.main.temp)
             setIcon(preIcon => preIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
             setDescription(prevDescription => prevDescription = response.data.weather[0].description)
-            setData(response.data)
+            setData(true)
         })
     }, [])
     
@@ -40,7 +40,7 @@ const Weather = () => {
             setTemp(prevTemp => prevTemp = response.data.main.temp)
             setIcon(preIcon => preIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
             setDescription(prevDescription => prevDescription = response.data.weather[0].description)
-            setData(response.data)
+            setData(true)
         })
         setContent('')
     }
@@ -53,13 +53,18 @@ const Weather = () => {
                 <input className={styles.input} onChange={event => setContent(event.target.value)} type='text' value={content} placeholder='City ...'></input>
                 <button className={styles.key} onClick={submitHandler}>Submit</button>
             </div>
-            <div className={styles.dataContainer}>
-            <h2>{cityName} <span>{country}</span> <img src={flag}></img></h2>
-            <h3>{`${temp} °c`}</h3>
-            <img src={icon}></img>
-            <p>{descirption}</p>
-            </div>
-
+                {
+                data ?
+                    <div className={styles.dataContainer}>
+                    <h2>{cityName} <span>{country}</span> <img src={flag}></img></h2>
+                    
+                    <h3>{`${temp} °c`}</h3>
+                    <img src={icon}></img>
+                    <p>{descirption}</p>
+                </div>
+                 :
+                 <Loading/>
+                }
         </div>
     );
     
