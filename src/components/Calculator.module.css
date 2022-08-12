@@ -58,7 +58,6 @@
      -1px -1px 4px var(--shadow-x),
       1px 1px 4px var(--shadow-y);
       opacity: 80%;
-      border: non;
 }
 
 tr:first-child .key {

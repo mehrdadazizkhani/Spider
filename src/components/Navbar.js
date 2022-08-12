@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     const [color, setColor] = useState(currentColor.slice(1))
     const [hamburgerToggle, setHamburgerToggle] = useState(true)
+    const [page, setPage] = useState(true)
     
     const toggleHandler = () => {
         setToggle(prevToggle => !prevToggle)
@@ -55,6 +57,14 @@ const Navbar = () => {
         
     }
 
+    const homeHandler = () => {
+        setPage(true)
+    }
+
+    const aboutHandler = () => {
+        setPage(false)
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.titleSec}>
@@ -67,8 +77,8 @@ const Navbar = () => {
                 </div>
                 <input onChange={colorHandler} value={color} className={styles.colorPicker} type='color'></input>
                 <ul className={`${styles.navBar} ${hamburgerToggle ? '' : styles.navClose}`}>
-                    <li>Home</li>
-                    <li>About</li>
+                    <li><Link className={page ? styles.buttonActivated : styles.buttonDeactivated} onClick={homeHandler} to='/'>Home</Link></li>
+                    <li><Link className={page ? styles.buttonDeactivated : styles.buttonActivated} onClick={aboutHandler} to='/about'>About</Link></li>
                 </ul>
                 <div className={`${styles.hamburgerMenu} ${hamburgerToggle ? styles.hamClose : ''}`} onClick={menuHandler}>
                     <div className={styles.lines}></div>

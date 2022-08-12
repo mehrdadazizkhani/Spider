@@ -21,31 +21,27 @@ const Weather = () => {
     useEffect(()=>{
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
         .then(response => {
-            setCityName(prevCityName => prevCityName = response.data.name)
-            setCountry(prevCountry => prevCountry = response.data.sys.country)
-            setFlag(prevFlag => prevFlag = `https://openweathermap.org/images/flags/${response.data.sys.country.toLowerCase()}.png`)
-            setTemp(prevTemp => prevTemp = response.data.main.temp)
-            setIcon(preIcon => preIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-            setDescription(prevDescription => prevDescription = response.data.weather[0].description)
-            setData(true)
+            setHandler(response)
         })
     }, [])
     
     const submitHandler = () => {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${content}&appid=${apiKey}&units=metric`)
         .then(response => {
-            setCityName(prevCityName => prevCityName = response.data.name)
-            setCountry(prevCountry => prevCountry = response.data.sys.country)
-            setFlag(prevFlag => prevFlag = `https://openweathermap.org/images/flags/${response.data.sys.country.toLowerCase()}.png`)
-            setTemp(prevTemp => prevTemp = response.data.main.temp)
-            setIcon(preIcon => preIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-            setDescription(prevDescription => prevDescription = response.data.weather[0].description)
-            setData(true)
+            setHandler(response)
         })
         setContent('')
     }
 
-
+    const setHandler = (response) => {
+        setCityName(prevCityName => prevCityName = response.data.name)
+        setCountry(prevCountry => prevCountry = response.data.sys.country)
+        setFlag(prevFlag => prevFlag = `https://openweathermap.org/images/flags/${response.data.sys.country.toLowerCase()}.png`)
+        setTemp(prevTemp => prevTemp = response.data.main.temp)
+        setIcon(preIcon => preIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+        setDescription(prevDescription => prevDescription = response.data.weather[0].description)
+        setData(true)
+    }
 
     return (
         <div className={styles.container}>
@@ -57,7 +53,6 @@ const Weather = () => {
                 data ?
                     <div className={styles.dataContainer}>
                     <h2>{cityName} <span>{country}</span> <img src={flag}></img></h2>
-                    
                     <h3>{`${temp} °c`}</h3>
                     <img src={icon}></img>
                     <p>{descirption}</p>

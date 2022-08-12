@@ -47,6 +47,11 @@
     color: var(--color-secondary);
 }
 
+.infoGroup > a:hover {
+    cursor: pointer;
+    color: var(--color-accent);
+}
+
 .infoGroup > a:active {
     color: var(--color-accent);
 }

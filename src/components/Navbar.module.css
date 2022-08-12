@@ -102,18 +102,31 @@ input[type="color"]::-webkit-color-swatch {
     transition: transform 0.3s ease-in;
 }
 
+.navBar li {
+    list-style-type: none;
+}
+
 .navClose {
     transform: translateX(100%);
 }
 
-.navBar li {
+.buttonDeactivated {
     list-style-type: none;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
-    padding: 5px;
     width: 100px;
     border-radius: 5px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
+    border-radius: 20px;
+    box-shadow:   3px 3px 10px var(--shadow-x),
+     -3px -3px 10px var(--shadow-y),
+     inset -1px -1px 4px var(--shadow-x),
+     inset 1px 1px 4px var(--shadow-y);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .hamburgerMenu {
@@ -146,7 +159,23 @@ input[type="color"]::-webkit-color-swatch {
     transform: rotate(45deg);
 }
 
-
+.buttonActivated {
+    box-shadow: inset  3px 3px 10px var(--shadow-x),
+    inset -3px -3px 10px var(--shadow-y),
+     -1px -1px 4px var(--shadow-x),
+      1px 1px 4px var(--shadow-y);
+    opacity: 90%;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 100px;
+    color: var(--color-secondary);
+    border-radius: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 
 
 
@@ -159,7 +188,7 @@ input[type="color"]::-webkit-color-swatch {
 
 @media screen and (min-width: 800px) {
     .navBar {
-        background-color: var(--color-peimary);
+        background-color: var(--color-primary);
         top: auto;
         right: auto;
         position: relative;
