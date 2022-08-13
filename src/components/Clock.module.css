@@ -22,9 +22,9 @@
 }
 
 .hourHandle {
-    top: 5%;
+    top: 25%;
     position: absolute;
-    height: 90%;
+    height: 50%;
     width: 3px;
 }
 
@@ -32,8 +32,8 @@
     content: '';
     top: 0;
     position: absolute;
-    background-color: var(--color-accent);
-    height: 5%;
+    background-color: var(--color-secondary);
+    height: 50%;
     width: 3px;
     border-radius: 1.5px;
     box-shadow:  3px 3px 6px var(--shadow-x),
@@ -41,9 +41,9 @@
 }
 
 .minuteHandle {
-    top: 5%;
+    top: 15%;
     position: absolute;
-    height: 90%;
+    height: 70%;
     width: 3px;
 }
 
@@ -51,8 +51,8 @@
     content: '';
     top: 0;
     position: absolute;
-    background-color: var(--color-accent);
-    height: 10%;
+    background-color: var(--color-secondary);
+    height: 50%;
     width: 3px;
     border-radius: 1.5px;
     box-shadow:  3px 3px 6px var(--shadow-x),
@@ -77,3 +77,11 @@
     box-shadow:  3px 3px 6px var(--shadow-x),
     -3px -3px 6px var(--shadow-y);
 }
+
+.numbers {
+    top: 5%;
+    position: absolute;
+    height: 90%;
+    font-size: 1.3rem;
+}
+

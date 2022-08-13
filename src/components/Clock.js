@@ -7,26 +7,22 @@ const Clock = () => {
     const [minute, setMinute] = useState(0)
     const [hour, setHour] = useState(0)
 
+    const numbers = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+
     const getTime = () => {
         const date = new Date()
-        setSecond(prevSecond => date.getSeconds() * 6)
-        setMinute(prevMinute => date.getMinutes() * 6)
-        setHour(prevHour => date.getHours() * 6)
-    }
-    
-    setInterval(getTime,1000)
+        setSecond(prevSecond => prevSecond = date.getSeconds() * 6)
+        setMinute(prevMinute => prevMinute = date.getMinutes() * 6)
+        setHour(prevHour => prevHour = date.getHours() * 30)
 
-    const clockNumbers = () => {
-        for(let i = 0; i < 12; i++) {
-            clockNumbers.push(
-                <h1>salam</h1>
-            )
-        }
     }
+ 
+    setInterval(getTime,1000)
 
     return (
         <div className={styles.container}>
             <div className={styles.clock}>
+                {numbers.map((value, index) => <div className={styles.numbers} style={{transform: `rotate(${360/12*(index+1)}deg)`}}><div style={{transform: `rotate(-${360/12*(index+1)}deg)`}}>{value}</div></div>)}
                 <div style={{transform: `rotate(${hour}deg)`}} className={styles.hourHandle}></div>
                 <div style={{transform: `rotate(${minute}deg)`}} className={styles.minuteHandle}></div>
                 <div style={{transform: `rotate(${seconsd}deg)`}} className={styles.secondHandle}></div>
