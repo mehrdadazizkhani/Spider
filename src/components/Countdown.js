@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Countdown.module.css'
 
 const Countdown = () => {
@@ -8,83 +8,96 @@ const Countdown = () => {
     const [second, setSecond] = useState("00")
 
     const [button, setButton] = useState(false)
+    const [display, setDisplay] = useState('00:00:00')
 
     const [totalsecond, setTotalsecond] = useState(0)
     const intervalRef = React.useRef(null);
 
+    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_4e4f3d7c3f.mp3?filename=sfx_seatbelt-warning_auto-80273.mp3')
+
     const hourUpArrowHandler = () => {
         setHour(prevHour => +prevHour < 9 ? `0${+prevHour + 1}` : +prevHour + 1)
+        setTotalsecond(prevTotalsecond => prevTotalsecond + 3600)
     }
 
     const hourDownArrowHandler = () => {
         if (hour > 0) {
             setHour(prevHour => +prevHour < 11 ? `0${+prevHour - 1}` : +prevHour - 1)
+            setTotalsecond(prevTotalsecond => prevTotalsecond - 3600)
         }
     }
 
     const minuteUpArrowHandler = () => {
         if (minute < 59) {
             setMinute(prevMinute => +prevMinute < 9 ? `0${+prevMinute + 1}` : +prevMinute + 1)
+            setTotalsecond(prevTotalsecond => prevTotalsecond + 60)
         }
     }
 
     const minuteDownArrowHandler = () => {
         if (minute > 0) {
             setMinute(prevMinute => +prevMinute < 11 ? `0${+prevMinute - 1}` : +prevMinute - 1)
+            setTotalsecond(prevTotalsecond => prevTotalsecond - 60)
         }
     }
 
     const secondUpArrowHandler = () => {
         if (second < 59) {
             setSecond(prevSecond => +prevSecond < 9 ? `0${+prevSecond + 1}` : +prevSecond + 1)
+            setTotalsecond(prevTotalsecond => prevTotalsecond + 1)
         }
     }
 
     const secondDownArrowHandler = () => {
         if (second > 0) {
             setSecond(prevSecond => +prevSecond < 11 ? `0${+prevSecond - 1}` : +prevSecond - 1)
+            setTotalsecond(prevTotalsecond => prevTotalsecond - 1)
         }
     }
 
-
-    
-
     const startCounter = () => {
-        setButton(prevButton => true)
-        let total = (hour*60*60+minute*60+(+second))
-        
-        setTotalsecond(prevTotalsecond => total)
-        console.log(totalsecond)
-
+        const currentTime = new Date()
+        const startSeconds = (currentTime.getHours()*60*60)+(currentTime.getMinutes()*60)+currentTime.getSeconds()
         if (intervalRef.current) return;
         intervalRef.current = setInterval(() => {
-          setTotalsecond(prevTotalsecond => prevTotalsecond - 1);
-          console.log(totalsecond)
-        }, 1000);
-
-        // const hour = Math.floor(totalSecond/60/60)
-        // const minute = Math.floor(totalSecond/60)
-        // const second = Math.floor(totalSecond%60)
-        // console.log(minute)
-        // console.log(`${hour}:${minute}:${second}`)
-        
+            setButton(true)
+            const currentTime = new Date()
+            const currentSeconds = (currentTime.getHours()*60*60)+(currentTime.getMinutes()*60)+currentTime.getSeconds()
+            const finalTime = (totalsecond+startSeconds)-currentSeconds
+            setDisplay(`${Math.floor(finalTime/60/60).toString().padStart(2,'0')}:${Math.floor(finalTime%3600/60).toString().padStart(2,'0')}:${Math.floor(finalTime%60).toString().padStart(2,'0')}`)
+            if (finalTime < 1) {
+                audio.play()
+                setTotalsecond(0)
+                clearInterval(intervalRef.current)
+                setHour('00')
+                setMinute('00')
+                setSecond('00')
+                setButton(false)
+                intervalRef.current = null;
+            }
+        }, 1000);  
     }
 
     const stopCounter = () => {
-        setHour(prevHour => '00')
-        setMinute(prevMinute => '00')
-        setSecond(prevSecond => '00')
-        setButton(prevButton => false)
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-            intervalRef.current = null;
-        }
+        setHour('00')
+        setMinute('00')
+        setSecond('00')
+        setButton(false)
+        setTotalsecond(0)
+        clearInterval(intervalRef.current);
+        setDisplay('00:00:00')
+        intervalRef.current = null;
+    }
+
+    const muteHandler = () => {
+        audio.stop()
     }
 
     return (
-        <div className={styles.container}>
+        <div onClick={muteHandler} className={styles.container}>
             <div className={styles.countdown}>
-                    <div className={styles.counterArea}>
+                    <p className={`${button ? '' : styles.arrowHide} ${styles.display}`}>{display}</p>
+                    <div className={`${button ? styles.arrowHide : ''} ${styles.counterArea}`}>
                         <div className={styles.counterCol}>
                             <div onMouseDown={hourUpArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-up"></i></div>
                             <span className={styles.hour}>{hour}</span>
@@ -107,9 +120,6 @@ const Countdown = () => {
                         <div className={button ? styles.buttonHide : ''}><i onClick={startCounter} id={styles['button']} className="fa-solid fa-play"></i></div>
                         <div className={button ? '' : styles.buttonHide}><i onClick={stopCounter} id={styles['button']} className="fa-solid fa-stop"></i></div>
                     </div>
-                    {/* <div className={styles.progress}>
-                        <div className={styles.lines} style={{transform: `rotate(${255}deg)`}}></div>
-                    </div> */}
             </div>
         </div>
     );
