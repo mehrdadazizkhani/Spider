@@ -8,13 +8,14 @@ import Weather from './Weather';
 import Crypto from './Crypto';
 import Todo from './Todo';
 import Note from './Note.js'
+import Covid from './Covid';
 
 const Content = () => {
     return (
         <div className={styles.container}>
             <div className={styles.content}>    
                 <Clock/>
-                <div>world clock</div>
+                <Covid/>
                 <Crypto/>
                 <Alarm/>
                 <Calculator/>
