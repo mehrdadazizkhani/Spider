@@ -51,7 +51,6 @@ const Covid = () => {
     },[])
 
     const dataHandler = (response) => {
-        console.log(response.data)
         response = response.data
         setCountry(response.countryInfo.iso3)
         setFlag(response.countryInfo.flag)
