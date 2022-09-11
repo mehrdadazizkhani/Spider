@@ -1,11 +1,24 @@
 import React from 'react';
 import styles from './Todo.module.css'
+import TodoCart from './TodoCart';
 
 const Todo = () => {
+
     return (
-        <div className={styles.container}>
-            
-        </div>
+        <section className={styles.container}>
+            <header className={styles.header}></header>
+            <section className={styles.body}>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+            </section>
+        </section>
     );
 };
 

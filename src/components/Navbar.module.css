@@ -66,12 +66,22 @@
     box-shadow:  3px 3px 6px var(--shadow-x),
                  -3px -3px 6px var(--shadow-y);
     cursor: pointer;
+    border: 3px solid var(--color-primary);
     width: 30px;
     height: 30px;
     padding: 0;
     border-radius: 50%;
-    border: none;
     margin-right: 20px;
+}
+
+.colorPicker:hover::after {
+    top: 80%;
+    position: absolute;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-primary);
+    content: "you can change accent color";
+    background-color: var(--color-secondary);
 }
 
 
