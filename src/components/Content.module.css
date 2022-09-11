@@ -1,5 +1,4 @@
 .container {
-    height: 100%;
     background-color: var(--color-primary);
     display: flex;
     justify-content: center;
@@ -8,17 +7,26 @@
 }
 
 .content {
-    height: calc(100vh - 200px);
+    max-width: 500px;
     padding: 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 'clock clock wclock wclock alarm todo todo crypto'
-                         'clock clock wclock wclock count todo todo crypto'
-                         'calc calc note note weather todo todo crypto'
-                         'calc calc note note weather todo todo crypto';
-    aspect-ratio: 5/2.5;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    grid-template-areas: 'clock clock'
+                         'clock clock'
+                         'alarm weather'
+                         'count weather'
+                         'calc calc'
+                         'calc calc'
+                         'note note'
+                         'note note'
+                         'todo todo'
+                         'todo todo'
+                         'crypto crypto'
+                         'crypto crypto'
+                         'wclock wclock'
+                         'wclock wclock';
 }
 
 
@@ -59,3 +67,22 @@
     grid-area: count;
 }
 
+
+
+
+@media screen and (min-width: 800px) {
+    .content {
+        max-width: 100vw;
+        height: calc(100vh - 200px);
+        padding: 20px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 'clock clock wclock wclock alarm todo todo crypto'
+                             'clock clock wclock wclock count todo todo crypto'
+                             'calc calc note note weather todo todo crypto'
+                             'calc calc note note weather todo todo crypto';
+        aspect-ratio: 5/2.5;
+    }
+}

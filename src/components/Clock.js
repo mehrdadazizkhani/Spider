@@ -22,7 +22,7 @@ const Clock = () => {
     return (
         <div className={styles.container}>
             <div className={styles.clock}>
-                {numbers.map((value, index) => <div className={styles.numbers} style={{transform: `rotate(${360/12*(index+1)}deg)`}}><div style={{transform: `rotate(-${360/12*(index+1)}deg)`}}>{value}</div></div>)}
+                {numbers.map((value, index) => <div key={index} className={styles.numbers} style={{transform: `rotate(${360/12*(index+1)}deg)`}}><div style={{transform: `rotate(-${360/12*(index+1)}deg)`}}>{value}</div></div>)}
                 <div style={{transform: `rotate(${hour}deg)`}} className={styles.hourHandle}></div>
                 <div style={{transform: `rotate(${minute}deg)`}} className={styles.minuteHandle}></div>
                 <div style={{transform: `rotate(${seconsd}deg)`}} className={styles.secondHandle}></div>
