@@ -12,8 +12,7 @@ const Countdown = () => {
 
     const [totalsecond, setTotalsecond] = useState(0)
     const intervalRef = React.useRef(null);
-
-    const audio = new Audio('https://storage.cloudconvert.com/tasks/41a8e652-96dc-435f-b4e1-7adb778a4800/count.mp3?AWSAccessKeyId=cloudconvert-production&Expires=1660832083&Signature=8XMRreirSDlZyEuLOq%2FG%2FIRRJhc%3D&response-content-disposition=attachment%3B%20filename%3D%22count.mp3%22&response-content-type=audio%2Fmpeg')
+    const audio = new Audio('https://assets.mixkit.co/sfx/download/mixkit-rooster-crowing-in-the-morning-2462.wav')
 
     const hourUpArrowHandler = () => {
         setHour(prevHour => +prevHour < 9 ? `0${+prevHour + 1}` : +prevHour + 1)
