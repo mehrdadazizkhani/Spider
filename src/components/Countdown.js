@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Countdown.module.css'
 
 const Countdown = () => {
@@ -15,41 +15,41 @@ const Countdown = () => {
     const audio = new Audio('https://assets.mixkit.co/sfx/download/mixkit-rooster-crowing-in-the-morning-2462.wav')
 
     const hourUpArrowHandler = () => {
-        setHour(prevHour => +prevHour < 9 ? `0${+prevHour + 1}` : +prevHour + 1)
+        setHour(prevHour => prevHour < 9 ? `0${+prevHour + 1}` : +prevHour + 1)
         setTotalsecond(prevTotalsecond => prevTotalsecond + 3600)
     }
 
     const hourDownArrowHandler = () => {
         if (hour > 0) {
-            setHour(prevHour => +prevHour < 11 ? `0${+prevHour - 1}` : +prevHour - 1)
+            setHour(prevHour => prevHour < 11 ? `0${+prevHour - 1}` : +prevHour - 1)
             setTotalsecond(prevTotalsecond => prevTotalsecond - 3600)
         }
     }
 
     const minuteUpArrowHandler = () => {
         if (minute < 59) {
-            setMinute(prevMinute => +prevMinute < 9 ? `0${+prevMinute + 1}` : +prevMinute + 1)
+            setMinute(prevMinute => prevMinute < 9 ? `0${+prevMinute + 1}` : +prevMinute + 1)
             setTotalsecond(prevTotalsecond => prevTotalsecond + 60)
         }
     }
 
     const minuteDownArrowHandler = () => {
         if (minute > 0) {
-            setMinute(prevMinute => +prevMinute < 11 ? `0${+prevMinute - 1}` : +prevMinute - 1)
+            setMinute(prevMinute => prevMinute < 11 ? `0${+prevMinute - 1}` : +prevMinute - 1)
             setTotalsecond(prevTotalsecond => prevTotalsecond - 60)
         }
     }
 
     const secondUpArrowHandler = () => {
         if (second < 59) {
-            setSecond(prevSecond => +prevSecond < 9 ? `0${+prevSecond + 1}` : +prevSecond + 1)
+            setSecond(prevSecond => prevSecond < 9 ? `0${+prevSecond + 1}` : +prevSecond + 1)
             setTotalsecond(prevTotalsecond => prevTotalsecond + 1)
         }
     }
 
     const secondDownArrowHandler = () => {
         if (second > 0) {
-            setSecond(prevSecond => +prevSecond < 11 ? `0${+prevSecond - 1}` : +prevSecond - 1)
+            setSecond(prevSecond => prevSecond < 11 ? `0${+prevSecond - 1}` : +prevSecond - 1)
             setTotalsecond(prevTotalsecond => prevTotalsecond - 1)
         }
     }
