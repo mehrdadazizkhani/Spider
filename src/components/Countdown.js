@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import styles from './Countdown.module.css'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 
 const Countdown = () => {
 
@@ -95,26 +99,26 @@ const Countdown = () => {
                     <p className={`${button ? '' : styles.arrowHide} ${styles.display}`}>{display}</p>
                     <div className={`${button ? styles.arrowHide : ''} ${styles.counterArea}`}>
                         <div className={styles.counterCol}>
-                            <div onMouseDown={hourUpArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-up"></i></div>
+                            <div onMouseDown={hourUpArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-up")}/></div>
                             <span className={styles.hour}>{hour}</span>
-                            <div className={+hour ? '' : styles.buttonDeactive} onClick={hourDownArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-down"></i></div>
+                            <div className={+hour ? '' : styles.buttonDeactive} onClick={hourDownArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-down")}/></div>
                         </div>
                         <span className={styles.colon}>:</span>
                         <div className={styles.counterCol}>
-                            <div className={+minute == 59 ? styles.buttonDeactive : ''} onClick={minuteUpArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-up"></i></div>
+                            <div className={+minute == 59 ? styles.buttonDeactive : ''} onClick={minuteUpArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-up")}/></div>
                             <span className={styles.minute}>{minute}</span>
-                            <div className={+minute ? '' : styles.buttonDeactive} onClick={minuteDownArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-down"></i></div>
+                            <div className={+minute ? '' : styles.buttonDeactive} onClick={minuteDownArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-down")}/></div>
                         </div>
                         <span className={styles.colon}>:</span>
                         <div className={styles.counterCol}>
-                            <div className={+second == 59 ? styles.buttonDeactive : ''} onClick={secondUpArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-up"></i></div>
+                            <div className={+second == 59 ? styles.buttonDeactive : ''} onClick={secondUpArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-up")}/></div>
                             <span className={styles.second}>{second}</span>
-                            <div className={+second ? '' : styles.buttonDeactive} onClick={secondDownArrowHandler}><i id={styles['arrow']} className="fa-solid fa-caret-down"></i></div>
+                            <div className={+second ? '' : styles.buttonDeactive} onClick={secondDownArrowHandler}><FontAwesomeIcon id={styles['arrow']} icon={solid("caret-down")}/></div>
                         </div>
                     </div>
                     <div className={styles.buttonArea}>
-                        <div className={button ? styles.buttonHide : ''}><i onClick={startCounter} id={styles['button']} className="fa-solid fa-play"></i></div>
-                        <div className={button ? '' : styles.buttonHide}><i onClick={stopCounter} id={styles['button']} className="fa-solid fa-stop"></i></div>
+                        <div className={button ? styles.buttonHide : ''}><FontAwesomeIcon onClick={startCounter} id={styles['button']} icon={solid("play")}/></div>
+                        <div className={button ? '' : styles.buttonHide}><FontAwesomeIcon onClick={stopCounter} id={styles['button']} icon={solid("stop")}/></div>
                     </div>
             </div>
         </div>

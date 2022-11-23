@@ -1,7 +1,40 @@
 .container {
+    box-sizing: border-box;
     width: 100%;
-    height: 90px;
-    background-color: var(--color-secondary);
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
     border-radius: 5px;
     margin-bottom: 5px;
+    color: var(--color-secondary);
+    font-size: 2rem;
+    padding: 10px;
+    border: solid 1px var(--color-secondary);
+}
+
+.todoContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+
+.label {
+    height: 3px;
+    width: 100%;
+    border-radius: 1.5px;
+    background-color: red;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--color-accent);
 }

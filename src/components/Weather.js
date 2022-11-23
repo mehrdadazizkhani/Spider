@@ -8,7 +8,7 @@ import axios from 'axios';
 const Weather = () => {
     const [data, setData] = useState(false)
     const [content, setContent] = useState('')
-    const [city, setCity] = useState('tehran')
+    const [city] = useState('tehran')
     const [cityName, setCityName] = useState()
     const [country, setCountry] = useState()
     const [flag, setFlag] = useState()

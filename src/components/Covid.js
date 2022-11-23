@@ -3,6 +3,9 @@ import axios from 'axios';
 import styles from './Covid.module.css'
 import Loading from './Loading';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 
 
 const Covid = () => {
@@ -68,7 +71,7 @@ const Covid = () => {
         <div className={styles.container}>
             <div className={styles.inputArea}>
                 <input onChange={event => setInput(event.target.value)} value={input} type='text' placeholder='country ...'></input>
-                <div><i onClick={submitHandler} className="fa-solid fa-virus-covid"></i></div>
+                <div><FontAwesomeIcon onClick={submitHandler} icon={solid("virus-covid")}/></div>
             </div>
             {data?
             <div className={styles.dataArea}>

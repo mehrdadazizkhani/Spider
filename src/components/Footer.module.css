@@ -6,9 +6,10 @@
     bottom: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    border-top: solid var(--color-secondary) 1px;
 }
 
 .container p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }

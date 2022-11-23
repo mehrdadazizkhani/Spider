@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Todo.module.css'
 import TodoCart from './TodoCart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const Todo = () => {
 
@@ -22,9 +24,15 @@ const Todo = () => {
                     <option onClick={colorHandler} value=""></option>
                     <option onClick={colorHandler} value=""></option>
                 </div>
-                <button className={styles.button}>Add</button>
+                <button className={styles.button}><FontAwesomeIcon icon={solid('plus')} /></button>
             </header>
             <section className={styles.body}>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
+                <TodoCart/>
                 <TodoCart/>
             </section>
         </section>

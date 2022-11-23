@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 
 const Navbar = () => {
     
@@ -68,12 +71,12 @@ const Navbar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.titleSec}>
-                <i className="fa-solid fa-spider" id={styles['logo']}></i>
+                <FontAwesomeIcon icon={solid("spider")} id={styles['logo']}/>
                 <h1>spider</h1>
             </div>
             <div className={styles.navBarSec}>
                 <div onClick={toggleHandler} className={styles.toggle}>
-                    <div className={`${styles.toggleCircle} ${toggle ? '' : styles.toggleCircleActive }`}><i className={toggle ? 'fa-solid fa-moon' : 'fa-solid fa-sun'}></i></div>
+                    <div className={`${styles.toggleCircle} ${toggle ? '' : styles.toggleCircleActive }`}><FontAwesomeIcon icon={!toggle ? solid('moon') : solid('sun')}/></div>
                 </div>
                 <input onChange={colorHandler} value={color} className={styles.colorPicker} type='color'></input>
                 <ul className={`${styles.navBar} ${hamburgerToggle ? '' : styles.navClose}`}>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Note.module.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 const Note = () => {
 
     const [content, setContent] = useState('')
@@ -27,7 +30,7 @@ const Note = () => {
             <textarea type={'text'} onChange={contentHandler} value={content} placeholder='You can write something here'></textarea>
             <div className={`${styles.infoGroup} ${content ? '' : styles.deactiveContent}`}>
                  <p>Number of words: <span>{wordCounter()}</span></p>
-                 <a href={URL.createObjectURL(new Blob([content], {type: 'text/plain'}))} download="filename"><i className="fa-solid fa-file-arrow-down"></i></a>
+                 <a href={URL.createObjectURL(new Blob([content], {type: 'text/plain'}))} download="filename"><FontAwesomeIcon icon={solid('file-arrow-down')}/></a>
             </div>
         </div>
     );
